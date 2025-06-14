@@ -1,0 +1,12 @@
+<!doctype html>
+<title>House Price Predictor</title>
+<h1>Enter House Features</h1>
+<form method=post>
+  {% for name in feature_names %}
+    <label>{{name}}: <input name="{{name}}" step="any" required></label><br>
+  {% endfor %}
+  <input type=submit value=Predict>
+</form>
+{% if prediction is not none %}
+  <h2>Predicted Price: ${{prediction}}k</h2>
+{% endif %}
